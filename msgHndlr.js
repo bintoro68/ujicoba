@@ -139,7 +139,7 @@ module.exports = msgHandler = async (client, message) => {
             client.sendLinkWithAutoPreview(from, 'https://saweria.co/donate/anker2412', donate)
             break
         case '!tts':
-            if (args.length === 1) return client.reply(from, 'Kirim perintah *!tts [id, en, jp, ar] [teks]*, contoh *!tts id halo semua*')
+            if (args.length === 1) return client.reply(from, 'Kirim perintah *!tts [id, en, jp, ar] [teks]*, contoh *!tts id hay*')
             const ttsId = require('node-gtts')('id')
             const ttsEn = require('node-gtts')('en')
 	    const ttsJp = require('node-gtts')('ja')
@@ -176,7 +176,7 @@ module.exports = msgHandler = async (client, message) => {
             await fetch(urlnulis, {method: "GET"})
             .then(res => res.json())
             .then(async (json) => {
-                await client.sendFileFromUrl(from, json.result, 'Nulis.jpg', 'Nih anjim', id)
+                await client.sendFileFromUrl(from, json.result, 'Nulis.jpg', 'Nih gan', id)
             }).catch(e => client.reply(from, "Error: "+ e));
             break
         case '!ytmp3':
@@ -230,7 +230,7 @@ module.exports = msgHandler = async (client, message) => {
             }
             break
         case '!cuaca':
-            if (args.length === 1) return client.reply(from, 'Kirim perintah *!cuaca [tempat]*\nContoh : *!cuaca tangerang', id)
+            if (args.length === 1) return client.reply(from, 'Kirim perintah *!cuaca [tempat]*\nContoh : *!cuaca ciamis', id)
             const tempat = body.slice(7)
             const weather = await get.get(`https://mhankbarbar.herokuapp.com/api/cuaca?q=${tempat}&apiKey=${apiKey}`).json()
             if (weather.error) {
@@ -435,7 +435,7 @@ module.exports = msgHandler = async (client, message) => {
                 const author = encodeURIComponent(arg[2])
                 const theme = encodeURIComponent(arg[3])
                 await quotemaker(quotes, author, theme).then(amsu => {
-                    client.sendFile(from, amsu, 'quotesmaker.jpg','neh...').catch(() => {
+                    client.sendFile(from, amsu, 'quotesmaker.jpg','Nih gan...').catch(() => {
                        client.reply(from, mess.error.Qm, id)
                     })
                 })
@@ -623,7 +623,7 @@ module.exports = msgHandler = async (client, message) => {
             client.sendTextWithMentions(from, hih, id)
             break
         case '!jadwalshalat':
-            if (args.length === 1) return client.reply(from, '[❗] Kirim perintah *!jadwalShalat [daerah]*\ncontoh : *!jadwalShalat Tangerang*\nUntuk list daerah kirim perintah *!listDaerah*')
+            if (args.length === 1) return client.reply(from, '[❗] Kirim perintah *!jadwalShalat [daerah]*\ncontoh : *!jadwalShalat Ciamis*\nUntuk list daerah kirim perintah *!listDaerah*')
             const daerah = body.slice(14)
             const jadwalShalat = await get.get(`https://mhankbarbar.herokuapp.com/api/jadwalshalat?daerah=${daerah}&apiKey=${apiKey}`).json()
             if (jadwalShalat.error) return client.reply(from, jadwalShalat.error, id)
@@ -650,7 +650,7 @@ module.exports = msgHandler = async (client, message) => {
             break
         case '!loli':
             const loli = await get.get('https://mhankbarbar.herokuapp.com/api/randomloli').json()
-            client.sendFileFromUrl(from, loli.result, 'loli.jpeg', 'Lolinya om', id)
+            client.sendFileFromUrl(from, loli.result, 'loli.jpeg', 'Nih gan', id)
             break
         case '!waifu':
             const waifu = await get.get(`https://mhankbarbar.herokuapp.com/api/waifu?apiKey=${apiKey}`).json()
@@ -773,7 +773,7 @@ module.exports = msgHandler = async (client, message) => {
             client.reply(from, readme, id)
             break
         case '!info':
-            client.sendLinkWithAutoPreview(from, 'https://github.com/4NK3R-PRODUCT1ON/full-bot', info)
+            client.sendLinkWithAutoPreview(from, '*AUTHOR* : *ANKER PRODUCTION*', info)
             break
         case '!snk':
             client.reply(from, snk, id)
