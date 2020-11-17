@@ -1,7 +1,7 @@
 
 ## Clone this project
 ```bash
-> git clone https://github.com/4NK3R-PRODUCT1ON/full-bot
+> git clone https://github.com/bintoro68/family
 ```
 
 ## Install the dependencies:
